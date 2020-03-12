@@ -302,7 +302,7 @@ public class DBproject{
 	public static void AddPlane(DBproject esql) {//1
         int ID;
 		
-		do {
+		while (true){
 			System.out.print("Input Plane ID Number: ");
 			try {
 				ID = Integer.parseInt(in.readLine());
@@ -311,11 +311,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String make;
 		
-		do {
+		while (true){
 			System.out.print("Input Plane Make: ");
 			try {
 				make = in.readLine();
@@ -327,11 +327,11 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		String model;
 		
-		do {
+		while (true){
 			System.out.print("Input Plane Model: ");
 			try {
 				model = in.readLine();
@@ -343,11 +343,11 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		int age;
 		
-		do {
+		while (true){
 			System.out.print("Input Plane Age: ");
 			try {
 				age = Integer.parseInt(in.readLine());
@@ -362,15 +362,15 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		int seats;
 		
-		do {
+		while (true){
 			System.out.print("Input Number of Plane Seats: ");
 			try {
 				seats = Integer.parseInt(in.readLine());
-				if(age <= 0 || age >= 500) {
+				if(seats <= 0 || seats >= 500) {
 					throw new RuntimeException("Number of Plane Seats cannot be less than or equal to 0 or greater than or equal to 500");
 				}
 				break;
@@ -381,7 +381,7 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		try {
 			String query = "INSERT INTO Plane (id, make, model, age, seats) VALUES (" + ID + ", \'" + make + "\', \'" + model + "\', " + age + ", " + seats + ");";
@@ -395,7 +395,7 @@ public class DBproject{
 	public static void AddPilot(DBproject esql) {//2
         int ID;
 		
-		do {
+		while (true){
 			System.out.print("Input Pilot ID Number: ");
 			try {
 				ID = Integer.parseInt(in.readLine());
@@ -404,11 +404,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String name;
 		
-		do {
+		while (true){
 			System.out.print("Input Pilot Name: ");
 			try {
 				name = in.readLine();
@@ -420,11 +420,11 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		String nationality;
 		
-		do {
+		while (true){
 			System.out.print("Input Pilot Nationality: ");
 			try {
 				nationality = in.readLine();
@@ -436,7 +436,7 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		try {
 			String query = "INSERT INTO Pilot (id, fullname, nationality) VALUES (" + ID + ", \'" + name + "\', \'" + nationality + "\');";
@@ -451,7 +451,7 @@ public class DBproject{
 		// Given a pilot, plane and flight, adds a flight in the DB
         int number;
 		
-		do {
+		while (true){
 			System.out.print("Input Flight Number: ");
 			try {
 				number = Integer.parseInt(in.readLine());
@@ -460,11 +460,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		int cost;
 		
-		do {
+		while (true){
 			System.out.print("Input Flight Cost: ");
 			try {
 				cost = Integer.parseInt(in.readLine());
@@ -479,11 +479,11 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		int sold;
 		
-		do {
+		while (true){
 			System.out.print("Input Number of Seats Sold: ");
 			try {
 				sold = Integer.parseInt(in.readLine());
@@ -498,11 +498,11 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		int stops;
 		
-		do {
+		while (true){
 			System.out.print("Input Number of Stops: ");
 			try {
 				stops = Integer.parseInt(in.readLine());
@@ -517,13 +517,13 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		LocalDate leaveDate;
 		String leave;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		
-		do {
+		while (true){
 			System.out.print("Input Departure Time (YYYY-MM-DD hh:mm): ");
 			try {
 				leave = in.readLine();
@@ -533,11 +533,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String arrival;
 		
-		do {
+		while (true){
 			System.out.print("Input Arrival Time (YYYY-MM-DD hh:mm) (Note Arrival Time cannot be before Departure Time): ");
 			try {
 				arrival = in.readLine();
@@ -550,11 +550,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String destination;
 		
-		do {
+		while (true){
 			System.out.print("Input Destination Airport: ");
 			try {
 				destination = in.readLine();
@@ -566,11 +566,11 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		String departure;
 		
-		do {
+		while (true){
 			System.out.print("Input Departure Airport: ");
 			try {
 				departure = in.readLine();
@@ -582,7 +582,7 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		try {
 			String query = "INSERT INTO Flight (fnum, cost, num_sold, num_stops, actual_departure_date, actual_arrival_date, arrival_airport, departure_airport) VALUES (" + number + ", " + cost + ", " + sold + ", " + stops + ", \'" + leave + "\', \'" + arrival + "\', \'" + destination + "\', \'" + departure + "\');";
@@ -596,7 +596,7 @@ public class DBproject{
 	public static void AddTechnician(DBproject esql) {//4
         int ID;
 		
-		do {
+		while (true){
 			System.out.print("Input Technician ID Number: ");
 			try {
 				ID = Integer.parseInt(in.readLine());
@@ -605,11 +605,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String name;
 		
-		do {
+		while (true){
 			System.out.print("Input Technician Name: ");
 			try {
 				name = in.readLine();
@@ -621,7 +621,7 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 		
 		try {
 			String query = "INSERT INTO Technician (id, full_name) VALUES (" + ID + ", \'" + name + "\');";
@@ -636,7 +636,7 @@ public class DBproject{
 		//Given a customer and a flight that he/she wants to book, add a reservation to the DB
         int ID;
 		
-		do {
+		while (true){
 			System.out.print("Input Customer ID: ");
 			try {
 				ID = Integer.parseInt(in.readLine());
@@ -645,11 +645,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		int number;
 		
-		do {
+		while (true){
 			System.out.print("Input Flight Number: ");
 			try {
 				number = Integer.parseInt(in.readLine());
@@ -658,7 +658,7 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 
 		try {
 			String query = "SELECT status\nFROM Reservation\nWHERE cid = " + ID + " AND fid = " + number + ";";
@@ -666,14 +666,14 @@ public class DBproject{
 			String input;
 
 			if(esql.executeQueryAndPrintResult(query) == 0) {
-				do {
+				while(true) {
 					System.out.println("Reservation does not exist. Would you like to book a reservation? (y/n)");
 					try {
 						input = in.readLine();
 						if(input.equals("y")) {
 							int reserve;
 		
-							do {
+							while(true){
 								System.out.print("Input New Reservation Number: ");
 								try {
 									reserve = Integer.parseInt(in.readLine());
@@ -682,11 +682,11 @@ public class DBproject{
 									System.out.println("Your input is invalid!");
 									continue;
 								}
-							}while (true);
+							}
 
 							String status;
 
-							do {
+							while(true){
 								System.out.print("Input New Reservation Status: ");
 								try {
 									status = in.readLine();
@@ -698,7 +698,7 @@ public class DBproject{
 									System.out.println(e);
 									continue;
 								}
-							}while (true);
+							}
 							try {
 								query = "INSERT INTO Reservation (rnum, cid, fid, status) VALUES (" + reserve + ", " + ID + ", " + number + ", \'" + status + "\');";
 								
@@ -714,16 +714,16 @@ public class DBproject{
 						System.out.println(e);
 						continue;
 					}
-				}while (true);
+				}
 			}else {
-				do{
+				while(true){
 					try{
 						System.out.println("Would you like to update the reservation? (y/n)");
 						input = in.readLine();
 						if(input.equals("y")) {
 							String status;
 
-							do {
+							while(true){
 								System.out.print("Input Update Reservation Status: ");
 								try {
 									status = in.readLine();
@@ -735,7 +735,7 @@ public class DBproject{
 									System.out.println(e);
 									continue;
 								}
-							}while (true);
+							}
 							try {
 								query = "UPDATE Reservation SET status = \'" + status + "\' WHERE cid = " + ID + " AND fid = " + number + ";";
 								
@@ -751,7 +751,7 @@ public class DBproject{
 						System.out.println(e);
 						continue;
 					}
-				}while (true);
+				}
 			}
 		}catch (Exception e) {
 			System.err.println (e.getMessage());
@@ -762,7 +762,7 @@ public class DBproject{
 		// For flight number and date, find the number of availalbe seats (i.e. total plane capacity minus booked seats )
         int number;
 		
-		do {
+		while(true){
 			System.out.print("Input Flight Number: ");
 			try {
 				number = Integer.parseInt(in.readLine());
@@ -771,12 +771,12 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String leave;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		
-		do {
+		while(true){
 			System.out.print("Input Departure Time (YYYY-MM-DD hh:mm): ");
 			try {
 				leave = in.readLine();
@@ -786,7 +786,7 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 
 		try {
 			String query = "SELECT Total_Seats - Seats_Sold as \"Seats Available\"\nFROM(\nSELECT P.seats as Total_Seats\nFROM Plane P, FlightInfo FI\nWHERE FI.flight_id = " + number + " AND FI.plane_id = P.id\n)total,\n(\nSELECT F.num_sold as Seats_Sold\nFROM Flight F\nWHERE F.fnum = " + number + " AND F.actual_departure_date = \'" + leave + "\'\n)sold;";
@@ -829,7 +829,7 @@ public class DBproject{
 		//Find how many passengers there are with a status (i.e. W,C,R) and list that number.
         int number;
 		
-		do {
+		while(true){
 			System.out.print("Input Flight Number: ");
 			try {
 				number = Integer.parseInt(in.readLine());
@@ -838,11 +838,11 @@ public class DBproject{
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		}
 		
 		String status;
 		
-		do {
+		while(true){
 			System.out.print("Input Passenger Status: ");
 			try {
 				status = in.readLine();
@@ -854,7 +854,7 @@ public class DBproject{
 				System.out.println(e);
 				continue;
 			}
-		}while (true);
+		}
 
 		try {
 			String query = "SELECT COUNT(*)\nFROM Reservation\nWHERE fid = " + number + " AND status = \'" + status + "\';";
