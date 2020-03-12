@@ -484,7 +484,7 @@ public class DBproject{
 	int num_sold;
 	int num_stops;
 	LocalDate departureDate;
-	LocalDate arrivalDate
+	LocalDate arrivalDate;
 	String actual_departure_date;
 	String actual_arrival_date;
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
@@ -555,7 +555,7 @@ public class DBproject{
 			try 
 			{
 				num_stops = Integer.parseInt(in.readLine());
-				if(num_stops <= 1) 
+				if(num_stops < 1) 
 				{
 					throw new RuntimeException("Please enter valid number of stops.");
 				}
@@ -578,7 +578,7 @@ public class DBproject{
 			try 
 			{
 				actual_departure_date = in.readLine();
-				departureDate = LocalDate.parse(actual_departure_Date, formatter);
+				departureDate = LocalDate.parse(actual_departure_date, formatter);
 				break;
 			}
 			catch (Exception e) 
@@ -594,7 +594,7 @@ public class DBproject{
 			try 
 			{
 				actual_arrival_date = in.readLine();
-				LocalDate arrivalDate = LocalDate.parse(actual_arrival_date, formatter);
+				arrivalDate = LocalDate.parse(actual_arrival_date, formatter);
 				if(arrivalDate.isAfter(departureDate) == false) 
 				{
 					throw new RuntimeException();
@@ -613,7 +613,7 @@ public class DBproject{
 			try 
 			{
 				arrival_airport = in.readLine();
-				if(arrival_airport.length() < 1 || destination.length() >= 6)
+				if(arrival_airport.length() < 1 || arrival_airport.length() >= 6)
 				{
 					throw new RuntimeException("Please enter a valid Arrival Airport.");
 				}
@@ -677,7 +677,7 @@ public class DBproject{
 			System.out.print("Input Technician Name: ");
 			try 
 			{
-				fullname = in.readLine();
+				full_name = in.readLine();
 				if(full_name.length() < 1 || full_name.length() >= 129) 
 				{
 					throw new RuntimeException("Please enter a valid Technician name.");
@@ -736,7 +736,7 @@ public class DBproject{
 
 		try 
 		{
-			String query = "SELECT status\nFROM Reservation\nWHERE cid = " + id + " AND fid = " + number + ";";
+			String query = "SELECT status\nFROM Reservation\nWHERE cid = " + cid + " AND fid = " + fid + ";";
 			String booking;
 			if(esql.executeQueryAndPrintResult(query) == 0) 
 			{
