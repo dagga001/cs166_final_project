@@ -949,6 +949,10 @@ public class DBproject{
 			try 
 			{
 				fnum = Integer.parseInt(in.readLine());
+				if(fnum < 0 || fnum > 1999)
+				{
+					throw new RuntimeException("This flight does not exist.");
+				}
 				break;
 			}
 			catch (Exception e) {
