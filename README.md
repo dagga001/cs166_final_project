@@ -24,6 +24,10 @@ Justin wrote the functions for: ListsTotalNumberOfRepairsPerPlane, ListTotalNumb
 2. cd Postgresql
 3. source ./stopPostgreDB
 
+# Changes made after Demo
+
+After demoing with Pritom sir, he told us to add a case for "Case 9" for when flight number does not exist. We implemented that with a simple if statement. This is now in effect in the code.
+
 
 
 
